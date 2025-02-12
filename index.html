@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Kiss Day</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffccdc;
+            font-family: Arial, sans-serif;
+            transition: 0.5s;
+        }
+        h1 {
+            margin-top: 50px;
+            color: #d63384;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff4081;
+            color: white;
+        }
+        .no {
+            background-color: #000;
+            color: white;
+            position: absolute;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        .kiss-container {
+            display: none;
+        }
+        img {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>💋 Happy Kiss Day 💋</h1>
+        <h2>Will you kiss me? 😘</h2>
+        <div class="container">
+            <button class="btn yes" onclick="showKissPage()">Yes</button>
+            <button class="btn no" onmouseover="moveNo()">No</button>
+        </div>
+    </div>
+
+    <div class="kiss-container">
+        <h1>😘 Happy Kiss Day My Love! 💖</h1>
+        <img src="https://assets.onecompiler.app/42t5f65gt/438vprug6/1000127227.jpg" alt="Kiss Image">
+    </div>
+
+    <script>
+        function moveNo() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            document.querySelector('.no').style.left = x + "px";
+            document.querySelector('.no').style.top = y + "px";
+        }
+
+        function showKissPage() {
+            document.querySelector('.main-container').style.display = "none";
+            document.querySelector('.kiss-container').style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
